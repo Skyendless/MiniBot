@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>products.png</file>
+        <file>1175071.png</file>
+        <file>1175141.png</file>
+        <file>1175167.png</file>
+        <file>567559.png</file>
+        <file>666.ico</file>
+        <file>Screenshot from 2018-11-10 15-14-18.png</file>
+        <file>Screenshot from 2018-11-10 15-14-35.png</file>
+        <file>Screenshot from 2018-11-10 15-14-52.png</file>
+        <file>Screenshot from 2018-11-10 15-15-11.png</file>
+        <file>Screenshot from 2018-11-10 15-16-18.png</file>
+        <file>Screenshot from 2018-11-10 15-16-38.png</file>
+        <file>Screenshot from 2018-11-10 15-18-04.png</file>
+        <file>Screenshot from 2018-11-10 15-18-17.png</file>
+        <file>Screenshot from 2018-11-10 15-19-26.png</file>
+    </qresource>
+</RCC>
