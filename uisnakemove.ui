@@ -90,8 +90,16 @@
     <string>停止</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092324717/567550.png</normaloff>:/new/prefix1/easyicon_net_20170424092324717/567550.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567540.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567540.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="Button_left">
@@ -107,13 +115,15 @@
     <string>左转</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092458301/562546.png</normaloff>:/new/prefix1/easyicon_net_20170424092458301/562546.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567557.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567557.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>40</width>
-     <height>40</height>
+     <width>25</width>
+     <height>25</height>
     </size>
    </property>
   </widget>
@@ -130,13 +140,15 @@
     <string>减速</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092324717/567542.png</normaloff>:/new/prefix1/easyicon_net_20170424092324717/567542.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>20</width>
-     <height>20</height>
+     <width>25</width>
+     <height>25</height>
     </size>
    </property>
   </widget>
@@ -230,8 +242,16 @@
     <string>开始</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092324717/567551.png</normaloff>:/new/prefix1/easyicon_net_20170424092324717/567551.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567551.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567551.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -247,8 +267,16 @@
     <string>连接舵机</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092324717/567549.png</normaloff>:/new/prefix1/easyicon_net_20170424092324717/567549.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/set.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/set.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="Button_fast">
@@ -264,13 +292,15 @@
     <string>加速</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092324717/567560.png</normaloff>:/new/prefix1/easyicon_net_20170424092324717/567560.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>20</width>
-     <height>20</height>
+     <width>25</width>
+     <height>25</height>
     </size>
    </property>
   </widget>
@@ -405,13 +435,15 @@
     <string>右转</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_20170424092458301/562541.png</normaloff>:/new/prefix1/easyicon_net_20170424092458301/562541.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567544.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567544.png</iconset>
    </property>
    <property name="iconSize">
     <size>
-     <width>40</width>
-     <height>40</height>
+     <width>25</width>
+     <height>25</height>
     </size>
    </property>
   </widget>
@@ -473,8 +505,16 @@
     <string>退出</string>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/easyicon_net_2017042608555983/1061475.png</normaloff>:/new/prefix1/easyicon_net_2017042608555983/1061475.png</iconset>
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567559.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567559.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="Line" name="line_4">
@@ -530,7 +570,9 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pictures/res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Button_quit</sender>

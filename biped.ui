@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>435</width>
-    <height>291</height>
+    <width>440</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -57,6 +57,18 @@
    <property name="text">
     <string>前进</string>
    </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
   </widget>
   <widget class="QPushButton" name="button_WheelMode_TurnLeft">
    <property name="geometry">
@@ -69,6 +81,18 @@
    </property>
    <property name="text">
     <string>左转</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567557.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567557.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -83,54 +107,6 @@
    <property name="text">
     <string>轮式</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>180</y>
-     <width>231</width>
-     <height>74</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>串口初始化</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="button_position_init">
-        <property name="text">
-         <string>姿态初始化</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QPushButton" name="button_quit">
-        <property name="text">
-         <string>退出</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="button_transform">
-        <property name="text">
-         <string>轮足转换</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
   </widget>
   <widget class="QLineEdit" name="line_show_message">
    <property name="geometry">
@@ -153,6 +129,18 @@
    </property>
    <property name="text">
     <string>后退</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="Line" name="line_2">
@@ -180,6 +168,18 @@
    <property name="text">
     <string>右转</string>
    </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567544.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567544.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
   </widget>
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
@@ -199,8 +199,23 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>前进</string>
+      </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567560.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -215,6 +230,18 @@
       <property name="text">
        <string>后退</string>
       </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567542.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -228,11 +255,149 @@
       <property name="text">
        <string>停止</string>
       </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567550.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567550.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="button_quit">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>190</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/562160.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/562160.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_transform">
+   <property name="geometry">
+    <rect>
+     <x>325</x>
+     <y>190</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>轮足转换</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567553.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567553.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>串口初始化</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/set.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/set.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_position_init">
+   <property name="geometry">
+    <rect>
+     <x>115</x>
+     <y>190</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>姿态初始化</string>
+   </property>
+   <property name="icon">
+    <iconset resource="pictures/res.qrc">
+     <normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567554.png</normaloff>:/snake_fourwheels_twowheel
+/snake_fourwheels_twowheel/567554.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pictures/res.qrc"/>
+ </resources>
  <connections/>
 </ui>
