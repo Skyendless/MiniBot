@@ -84,11 +84,11 @@ FORMS += \
     snake_like.ui \
     two_wheel_bot.ui \
     four_legged.ui \
-    biped.ui \
     three_wheel_bot.ui \
     four_wheel_bot.ui \
     mobile_manipulator.ui \
-    uisnakemove.ui
+    uisnakemove.ui \
+    biped.ui
 
 RESOURCES += \
     pictures/res.qrc
