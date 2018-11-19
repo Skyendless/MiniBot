@@ -34,6 +34,16 @@
       <property name="text">
        <string>串口初始化</string>
       </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/set.png</normaloff>:/set.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -49,6 +59,16 @@
       </property>
       <property name="text">
        <string>暂停</string>
+      </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/567550.png</normaloff>:/567550.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -66,6 +86,16 @@
       <property name="text">
        <string>初始姿态</string>
       </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/567553.png</normaloff>:/567553.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -78,6 +108,16 @@
       </property>
       <property name="text">
        <string>退出</string>
+      </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/567540.png</normaloff>:/567540.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -107,6 +147,16 @@
       <property name="text">
        <string>前进</string>
       </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/567560.png</normaloff>:/567560.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item>
@@ -122,6 +172,16 @@
       </property>
       <property name="text">
        <string>后退</string>
+      </property>
+      <property name="icon">
+       <iconset resource="pictures/res.qrc">
+        <normaloff>:/567542.png</normaloff>:/567542.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -141,6 +201,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pictures/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

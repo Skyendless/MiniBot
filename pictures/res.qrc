@@ -15,53 +15,22 @@
         <file>Screenshot from 2018-11-10 15-18-04.png</file>
         <file>Screenshot from 2018-11-10 15-18-17.png</file>
         <file>Screenshot from 2018-11-10 15-19-26.png</file>
-    </qresource>
-    <qresource prefix="/snake_fourwheels_twowheel&#xa;">
-        <file>snake_fourwheels_twowheel/562151.png</file>
-        <file>snake_fourwheels_twowheel/562152.png</file>
-        <file>snake_fourwheels_twowheel/562153.png</file>
-        <file>snake_fourwheels_twowheel/562154.png</file>
-        <file>snake_fourwheels_twowheel/562156.png</file>
-        <file>snake_fourwheels_twowheel/562157.png</file>
-        <file>snake_fourwheels_twowheel/562158.png</file>
-        <file>snake_fourwheels_twowheel/562159.png</file>
-        <file>snake_fourwheels_twowheel/562160.png</file>
-        <file>snake_fourwheels_twowheel/562161.png</file>
-        <file>snake_fourwheels_twowheel/562535.png</file>
-        <file>snake_fourwheels_twowheel/562536.png</file>
-        <file>snake_fourwheels_twowheel/562537.png</file>
-        <file>snake_fourwheels_twowheel/562538.png</file>
-        <file>snake_fourwheels_twowheel/562539.png</file>
-        <file>snake_fourwheels_twowheel/562540.png</file>
-        <file>snake_fourwheels_twowheel/562541.png</file>
-        <file>snake_fourwheels_twowheel/562542.png</file>
-        <file>snake_fourwheels_twowheel/562543.png</file>
-        <file>snake_fourwheels_twowheel/562544.png</file>
-        <file>snake_fourwheels_twowheel/562545.png</file>
-        <file>snake_fourwheels_twowheel/562546.png</file>
-        <file>snake_fourwheels_twowheel/562548.png</file>
-        <file>snake_fourwheels_twowheel/567538.png</file>
-        <file>snake_fourwheels_twowheel/567539.png</file>
-        <file>snake_fourwheels_twowheel/567540.png</file>
-        <file>snake_fourwheels_twowheel/567542.png</file>
-        <file>snake_fourwheels_twowheel/567544.png</file>
-        <file>snake_fourwheels_twowheel/567548.png</file>
-        <file>snake_fourwheels_twowheel/567549.png</file>
-        <file>snake_fourwheels_twowheel/567550.png</file>
-        <file>snake_fourwheels_twowheel/567551.png</file>
-        <file>snake_fourwheels_twowheel/567552.png</file>
-        <file>snake_fourwheels_twowheel/567553.png</file>
-        <file>snake_fourwheels_twowheel/567554.png</file>
-        <file>snake_fourwheels_twowheel/567555.png</file>
-        <file>snake_fourwheels_twowheel/567556.png</file>
-        <file>snake_fourwheels_twowheel/567557.png</file>
-        <file>snake_fourwheels_twowheel/567559.png</file>
-        <file>snake_fourwheels_twowheel/567560.png</file>
-        <file>snake_fourwheels_twowheel/583566.png</file>
-        <file>snake_fourwheels_twowheel/1061475.png</file>
-        <file>snake_fourwheels_twowheel/1096682.png</file>
-        <file>snake_fourwheels_twowheel/1096689.png</file>
-        <file>snake_fourwheels_twowheel/1096691.png</file>
-        <file>snake_fourwheels_twowheel/set.png</file>
+        <file>562541.png</file>
+        <file>562543.png</file>
+        <file>562546.png</file>
+        <file>567539.png</file>
+        <file>567540.png</file>
+        <file>567544.png</file>
+        <file>567549.png</file>
+        <file>567550.png</file>
+        <file>567551.png</file>
+        <file>567552.png</file>
+        <file>567553.png</file>
+        <file>567554.png</file>
+        <file>567556.png</file>
+        <file>567557.png</file>
+        <file>567560.png</file>
+        <file>set.png</file>
+        <file>567542.png</file>
     </qresource>
 </RCC>

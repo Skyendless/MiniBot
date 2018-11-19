@@ -91,9 +91,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567540.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567540.png</iconset>
+     <normaloff>:/567540.png</normaloff>:/567540.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -116,9 +114,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567557.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567557.png</iconset>
+     <normaloff>:/567552.png</normaloff>:/567552.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -141,9 +137,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567542.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567542.png</iconset>
+     <normaloff>:/567557.png</normaloff>:/567557.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -243,9 +237,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567551.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567551.png</iconset>
+     <normaloff>:/567551.png</normaloff>:/567551.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -268,9 +260,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/set.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/set.png</iconset>
+     <normaloff>:/set.png</normaloff>:/set.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -293,9 +283,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567560.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567560.png</iconset>
+     <normaloff>:/567544.png</normaloff>:/567544.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -436,9 +424,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567544.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567544.png</iconset>
+     <normaloff>:/567549.png</normaloff>:/567549.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -506,9 +492,7 @@
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
-     <normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567559.png</normaloff>:/snake_fourwheels_twowheel
-/snake_fourwheels_twowheel/567559.png</iconset>
+     <normaloff>:/567559.png</normaloff>:/567559.png</iconset>
    </property>
    <property name="iconSize">
     <size>
