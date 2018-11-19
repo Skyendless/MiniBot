@@ -9,7 +9,7 @@
 #include <inchworm_like.h>
 #include <four_legged.h>
 #include <four_wheel_bot.h>
-#include <snake_like.h>
+#include <uisnakemove.h>
 #include <biped.h>
 #include <mobile_manipulator.h>
 #include <three_wheel_bot.h>
@@ -57,7 +57,7 @@ private:
   manipulator manipulatorbot;
   inchworm_like inchworm_likebot;
   biped bipedbot;
-  snake_like snake_likebot;
+  UiSnakeMove snake_likebot;
   four_legged four_leggedbot;
   two_wheel_bot two_wheelbot;
   three_wheel_bot three_wheelbot;

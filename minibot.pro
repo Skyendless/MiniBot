@@ -22,7 +22,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-
+INCLUDEPATH += ./NewApi/include/#API
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
@@ -34,7 +34,21 @@ SOURCES += \
     biped.cpp \
     three_wheel_bot.cpp \
     four_wheel_bot.cpp \
-    mobile_manipulator.cpp
+    mobile_manipulator.cpp \
+    snake.cpp \
+    uisnakemove.cpp \
+    NewApi/source/dev_operating.cpp \
+    NewApi/source/group_bulk_read.cpp \
+    NewApi/source/group_bulk_write.cpp \
+    NewApi/source/group_sync_read.cpp \
+    NewApi/source/group_sync_write.cpp \
+    NewApi/source/packet_handler.cpp \
+    NewApi/source/port_handler.cpp \
+    NewApi/source/port_handler_arduino.cpp \
+    NewApi/source/port_handler_linux.cpp \
+    NewApi/source/port_handler_mac.cpp \
+    NewApi/source/port_handler_windows.cpp \
+    NewApi/source/protocol1_packet_handler.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,7 +60,22 @@ HEADERS += \
     biped.h \
     three_wheel_bot.h \
     four_wheel_bot.h \
-    mobile_manipulator.h
+    mobile_manipulator.h \
+    snake.h \
+    uisnakemove.h \
+    NewApi/include/dev_operating.h \
+    NewApi/include/dynamixel_sdk.h \
+    NewApi/include/group_bulk_read.h \
+    NewApi/include/group_bulk_write.h \
+    NewApi/include/group_sync_read.h \
+    NewApi/include/group_sync_write.h \
+    NewApi/include/packet_handler.h \
+    NewApi/include/port_handler.h \
+    NewApi/include/port_handler_arduino.h \
+    NewApi/include/port_handler_linux.h \
+    NewApi/include/port_handler_mac.h \
+    NewApi/include/port_handler_windows.h \
+    NewApi/include/protocol1_packet_handler.h
 
 FORMS += \
         mainwindow.ui \
@@ -58,7 +87,10 @@ FORMS += \
     biped.ui \
     three_wheel_bot.ui \
     four_wheel_bot.ui \
-    mobile_manipulator.ui
+    mobile_manipulator.ui \
+    uisnakemove.ui
 
 RESOURCES += \
     pictures/res.qrc
+
+DISTFILES +=
