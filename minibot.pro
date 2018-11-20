@@ -48,7 +48,15 @@ SOURCES += \
     NewApi/source/port_handler_linux.cpp \
     NewApi/source/port_handler_mac.cpp \
     NewApi/source/port_handler_windows.cpp \
-    NewApi/source/protocol1_packet_handler.cpp
+    NewApi/source/protocol1_packet_handler.cpp \
+    manipulator/dxlcontroller.cpp \
+    manipulator/jointstate.cpp \
+    manipulator/manipulatorcontroller.cpp \
+    manipulator/posestate.cpp \
+    manipulator/settings.cpp \
+    manipulator/utils.cpp \
+    manipulator/kine.c \
+    manipulator/xmath.c
 
 HEADERS += \
         mainwindow.h \
@@ -75,7 +83,15 @@ HEADERS += \
     NewApi/include/port_handler_linux.h \
     NewApi/include/port_handler_mac.h \
     NewApi/include/port_handler_windows.h \
-    NewApi/include/protocol1_packet_handler.h
+    NewApi/include/protocol1_packet_handler.h \
+    manipulator/dxlcontroller.h \
+    manipulator/jointstate.h \
+    manipulator/kine.h \
+    manipulator/manipulatorcontroller.h \
+    manipulator/posestate.h \
+    manipulator/settings.h \
+    manipulator/utils.h \
+    manipulator/xmath.h
 
 FORMS += \
         mainwindow.ui \
