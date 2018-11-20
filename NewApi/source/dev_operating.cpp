@@ -2,9 +2,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <termios.h>
-#include <linux/serial.h>
-#include <sys/ioctl.h>
+//#include <termios.h>
+//#include <linux/serial.h>
+//#include <sys/ioctl.h>
 #include <sys/time.h>
 #include "dev_operating.h"
 

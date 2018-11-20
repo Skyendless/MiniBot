@@ -27,11 +27,12 @@
 #elif defined(__APPLE__)
 #define WINDECLSPEC
 #elif defined(_WIN32) || defined(_WIN64)
-  #ifdef WINDLLEXPORT
-  #define WINDECLSPEC __declspec(dllexport)
-  #else
-  #define WINDECLSPEC __declspec(dllimport)
-  #endif
+#define WINDECLSPEC
+//  #ifdef WINDLLEXPORT
+//  #define WINDECLSPEC __declspec(dllexport)
+//  #else
+//  #define WINDECLSPEC __declspec(dllimport)
+//  #endif
 #elif defined(ARDUINO) || defined(__OPENCR__) || defined(__OPENCM904__)
 #define WINDECLSPEC
 #endif
