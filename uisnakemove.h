@@ -26,16 +26,7 @@ private slots:
 
     void on_Button_start_clicked();
 
-    void parament_show();//显示小蛇运动参数
     void on_Button_stop_clicked();
-
-    void on_Button_fast_clicked();
-
-    void on_Button_right_clicked();
-
-    void on_Button_slow_clicked();
-
-    void on_Button_left_clicked();
 
     void on_Button_a_up_clicked();
 
@@ -48,6 +39,14 @@ private slots:
     void on_Button_period_up_clicked();
 
     void on_Button_period_down_clicked();
+
+    void on_Button_right_pressed();
+
+    void on_Button_right_released();
+
+    void on_Button_left_pressed();
+
+    void on_Button_left_released();
 
 private:
     Ui::UiSnakeMove *ui;

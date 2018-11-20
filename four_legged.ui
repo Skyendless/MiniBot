@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>four_legged</string>
+   <string>Quadruped robot</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -32,7 +32,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>串口初始化</string>
+       <string>Uart Init</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -58,7 +58,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>暂停</string>
+       <string>Stop</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -84,7 +84,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>初始姿态</string>
+       <string>Stand Up</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -107,7 +107,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>退出</string>
+       <string>Quit</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -145,7 +145,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>前进</string>
+       <string>Forward</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -171,7 +171,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>后退</string>
+       <string>Back</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">

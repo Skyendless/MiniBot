@@ -7,6 +7,15 @@
 #define Increasement_w 5
 #define Increasement_period 5
 
+#define PERIOD_MAXIMUM  60
+#define PERIOD_MINIMUM  20
+#define A_MAXIMUM       60
+#define A_MINIMUM       20
+#define B_MAXIMUM       60
+#define B_MINIMUM       20
+#define GAMA_RIGHT      30
+#define GAMA_LEFT       -30
+
 UiSnakeMove::UiSnakeMove(QDialog *parent) :
     QDialog(parent),
     ui(new Ui::UiSnakeMove)
@@ -52,7 +61,7 @@ void UiSnakeMove::on_pushButton_clicked()
 void UiSnakeMove::on_Button_quanityOK_clicked()
 {
     mysnake.change_quanity( ui->line_quanity->text().toInt() );
-    ui->line_showmessage->setText("舵机数目是："
+    ui->line_showmessage->setText("The number of motors is :"
                                   + ui->line_quanity->text()
                                   + "."
                                   );
@@ -62,7 +71,7 @@ void UiSnakeMove::on_Button_start_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("请确定您已连接舵机");
+        ui->line_showmessage->setText("Please make sure that it is connected.");
     }
     else
     {
@@ -73,30 +82,11 @@ void UiSnakeMove::on_Button_start_clicked()
     }
 }
 
-void UiSnakeMove::parament_show()
-{
-    QString para;
-    para = QString::number(mysnake.read_a(),10);
-    ui->line_a->setText(para);
-
-    para = QString::number(mysnake.read_b(),10);
-    ui->line_b->setText(para);
-
-    para = QString::number(mysnake.read_g(),10);
-    ui->line_g->setText(para);
-
-    para = QString::number(mysnake.read_w(),10);
-    ui->line_w->setText(para);
-
-    para = QString::number(mysnake.read_p(),10);
-    ui->line_period->setText(para);
-}
-
 void UiSnakeMove::on_Button_stop_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("小蛇没有在运动.");
+        ui->line_showmessage->setText("It isn't moving.");
     }
     else
     {
@@ -105,68 +95,25 @@ void UiSnakeMove::on_Button_stop_clicked()
     }
 }
 
-void UiSnakeMove::on_Button_fast_clicked()
-{
-    if(flag_connected == 0)
-    {
-        ui->line_showmessage->setText("没有连接舵机.");
-    }
-    else
-    {
-        mysnake.change_w( Increasement_w + mysnake.read_w() );
-        emit parament_changed();
-    }
-}
-
-void UiSnakeMove::on_Button_slow_clicked()
-{
-    if(flag_connected == 0)
-    {
-        ui->line_showmessage->setText("没有连接舵机.");
-    }
-    else
-    {
-        mysnake.change_w( mysnake.read_w() - Increasement_w );
-        emit parament_changed();
-    }
-}
-
-void UiSnakeMove::on_Button_left_clicked()
-{
-    if(flag_connected == 0)
-    {
-        ui->line_showmessage->setText("没有连接舵机.");
-    }
-    else
-    {
-        mysnake.change_g(mysnake.read_g() - Increasement_g );
-        emit parament_changed();
-    }
-}
-
-void UiSnakeMove::on_Button_right_clicked()
-{
-    if(flag_connected == 0)
-    {
-        ui->line_showmessage->setText("没有连接舵机.");
-    }
-    else
-    {
-        mysnake.change_g(mysnake.read_g() + Increasement_g );
-        emit parament_changed();
-    }
-}
-
 void UiSnakeMove::on_Button_a_up_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_a_down->setEnabled(true);
         mysnake.change_a(mysnake.read_a() + Increasement_a );
         emit parament_changed();
+        if(mysnake.read_a() >= A_MAXIMUM)
+        {
+             ui->Button_a_up->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_a_up->setEnabled(true);
+        }
     }
 }
 
@@ -174,12 +121,21 @@ void UiSnakeMove::on_Button_a_down_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_a_up->setEnabled(true);
         mysnake.change_a(mysnake.read_a() - Increasement_a );
         emit parament_changed();
+        if(mysnake.read_a() <= A_MINIMUM)
+        {
+             ui->Button_a_down->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_a_down->setEnabled(true);
+        }
     }
 }
 
@@ -187,12 +143,21 @@ void UiSnakeMove::on_Button_b_up_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_b_down->setEnabled(true);
         mysnake.change_b(mysnake.read_b() + Increasement_b );
         emit parament_changed();
+        if(mysnake.read_b() >= B_MAXIMUM)
+        {
+             ui->Button_b_up->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_b_up->setEnabled(true);
+        }
     }
 }
 
@@ -200,12 +165,21 @@ void UiSnakeMove::on_Button_b_down_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_b_up->setEnabled(true);
         mysnake.change_b(mysnake.read_b() - Increasement_b );
         emit parament_changed();
+        if(mysnake.read_b() <= B_MINIMUM)
+        {
+             ui->Button_b_down->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_b_down->setEnabled(true);
+        }
     }
 }
 
@@ -213,12 +187,21 @@ void UiSnakeMove::on_Button_period_up_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_period_down->setEnabled(true);
         mysnake.change_p(mysnake.read_p() + Increasement_period );
         emit parament_changed();
+        if(mysnake.read_p() > PERIOD_MAXIMUM)
+        {
+             ui->Button_period_up->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_period_up->setEnabled(true);
+        }
     }
 }
 
@@ -226,11 +209,72 @@ void UiSnakeMove::on_Button_period_down_clicked()
 {
     if(flag_connected == 0)
     {
-        ui->line_showmessage->setText("没有连接舵机.");
+        ui->line_showmessage->setText("It's disconnected.");
     }
     else
     {
+        ui->Button_period_up->setEnabled(true);
         mysnake.change_p(mysnake.read_p() - Increasement_period );
+        emit parament_changed();
+        if(mysnake.read_p() < PERIOD_MINIMUM)
+        {
+             ui->Button_period_down->setDisabled(true);
+        }
+        else
+        {
+            ui->Button_period_down->setEnabled(true);
+        }
+    }
+}
+
+void UiSnakeMove::on_Button_right_pressed()
+{
+    if(flag_connected == 0)
+    {
+        ui->line_showmessage->setText("It's disconnected.");
+    }
+    else
+    {
+        mysnake.change_g( GAMA_RIGHT );
+        emit parament_changed();
+    }
+}
+
+void UiSnakeMove::on_Button_right_released()
+{
+    if(flag_connected == 0)
+    {
+        ui->line_showmessage->setText("It's disconnected.");
+    }
+    else
+    {
+        mysnake.change_g( 0 );
+        emit parament_changed();
+    }
+}
+
+void UiSnakeMove::on_Button_left_pressed()
+{
+    if(flag_connected == 0)
+    {
+        ui->line_showmessage->setText("It's disconnected.");
+    }
+    else
+    {
+        mysnake.change_g( GAMA_LEFT );
+        emit parament_changed();
+    }
+}
+
+void UiSnakeMove::on_Button_left_released()
+{
+    if(flag_connected == 0)
+    {
+        ui->line_showmessage->setText("It's disconnected.");
+    }
+    else
+    {
+        mysnake.change_g( 0 );
         emit parament_changed();
     }
 }

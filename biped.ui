@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>440</width>
-    <height>296</height>
+    <height>316</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,13 +17,13 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Biped robot</string>
   </property>
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>160</y>
+     <y>180</y>
      <width>441</width>
      <height>20</height>
     </rect>
@@ -37,25 +37,33 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>67</width>
+     <width>91</width>
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
    <property name="text">
-    <string>足式</string>
+    <string>Biped robot</string>
    </property>
   </widget>
   <widget class="QPushButton" name="button_WheelMode_GoStraight">
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>10</y>
+     <y>20</y>
      <width>102</width>
      <height>50</height>
     </rect>
    </property>
    <property name="text">
-    <string>前进</string>
+    <string>Forward</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -72,13 +80,13 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>60</y>
+     <y>70</y>
      <width>102</width>
      <height>50</height>
     </rect>
    </property>
    <property name="text">
-    <string>左转</string>
+    <string>Left</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -96,19 +104,27 @@
     <rect>
      <x>220</x>
      <y>0</y>
-     <width>67</width>
+     <width>91</width>
      <height>17</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
    <property name="text">
-    <string>轮式</string>
+    <string>Wheel robot</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_show_message">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>260</y>
+     <y>280</y>
      <width>421</width>
      <height>25</height>
     </rect>
@@ -118,13 +134,13 @@
    <property name="geometry">
     <rect>
      <x>280</x>
-     <y>110</y>
+     <y>120</y>
      <width>102</width>
      <height>50</height>
     </rect>
    </property>
    <property name="text">
-    <string>后退</string>
+    <string>Back</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -143,7 +159,7 @@
      <x>206</x>
      <y>0</y>
      <width>20</width>
-     <height>171</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="orientation">
@@ -154,13 +170,13 @@
    <property name="geometry">
     <rect>
      <x>330</x>
-     <y>60</y>
+     <y>70</y>
      <width>102</width>
      <height>50</height>
     </rect>
    </property>
    <property name="text">
-    <string>右转</string>
+    <string>Right</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -177,7 +193,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>20</y>
+     <y>30</y>
      <width>131</width>
      <height>141</height>
     </rect>
@@ -195,7 +211,7 @@
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>前进</string>
+       <string>Forward</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -218,7 +234,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>后退</string>
+       <string>Back</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -241,7 +257,7 @@
        </sizepolicy>
       </property>
       <property name="text">
-       <string>停止</string>
+       <string>Stop</string>
       </property>
       <property name="icon">
        <iconset resource="pictures/res.qrc">
@@ -261,7 +277,7 @@
    <property name="geometry">
     <rect>
      <x>325</x>
-     <y>190</y>
+     <y>210</y>
      <width>100</width>
      <height>60</height>
     </rect>
@@ -273,7 +289,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>退出</string>
+    <string>Quit</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -290,7 +306,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>190</y>
+     <y>210</y>
      <width>100</width>
      <height>60</height>
     </rect>
@@ -302,7 +318,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>轮足转换</string>
+    <string>Transform</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -319,7 +335,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>190</y>
+     <y>210</y>
      <width>100</width>
      <height>60</height>
     </rect>
@@ -331,7 +347,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>串口初始化</string>
+    <string>Uart Init</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -348,7 +364,7 @@
    <property name="geometry">
     <rect>
      <x>115</x>
-     <y>190</y>
+     <y>210</y>
      <width>100</width>
      <height>60</height>
     </rect>
@@ -360,7 +376,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>姿态初始化</string>
+    <string>Stand Up </string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">

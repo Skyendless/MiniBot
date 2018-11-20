@@ -9,11 +9,11 @@
 
 snake::snake()
 {
-    a=50;
-    b=65;
+    a=40;
+    b=40;
     g=0;
     w=100;
-    period=30;
+    period=40;
     stopMoving_signal = 1;
     motors_quanity = 0;
 }
