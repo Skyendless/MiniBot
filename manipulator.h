@@ -20,13 +20,15 @@ public:
     ~manipulator();
 
 private slots:
-    void on_pushButton_clicked();
     void onJointsButtonGroupClicked(QAbstractButton *button);
     void onCartesianButtonGroupClicked(QAbstractButton *button);
+    void onJointStateUpated(const JointState &state);
+    void onPoseStateUpdated(const PoseState &state);
+    void hanleNewCommand(const QString &cmd);
 
     void on_connect_button_clicked();
-
     void on_disconnect_button_clicked();
+    void on_quit_button_clicked();
 
 private:
     Ui::manipulator *ui;
@@ -41,6 +43,11 @@ private:
     void updateCommandStateLabel();
     void disableControls();
     void enableControls();
+
+    bool exceedRange(double joints[6]);
+    bool hasIkine(double pose[6]);
+    bool _ikine(double pose[6], double joints[5]);
+    void _fkine(double joints[5], double pose[6]);
 };
 
 #endif // MANIPULATOR_H

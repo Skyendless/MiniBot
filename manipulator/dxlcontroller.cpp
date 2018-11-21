@@ -185,7 +185,7 @@ int DxlController::presentPosition(int id)
 {
     int dxl_comm_result = COMM_TX_FAIL;             // Communication result
     uint8_t dxl_error = 0;                          // Dynamixel error
-    uint16_t present_position;
+    uint16_t present_position = 512;
     dxl_comm_result = m_packetHandler->read2ByteTxRx(m_portHandler, id, PRESENT_POSITION, &present_position, &dxl_error);
     if (dxl_comm_result != COMM_SUCCESS)
     {
@@ -203,7 +203,7 @@ int DxlController::presentSpeed(int id)
 {
     int dxl_comm_result = COMM_TX_FAIL;             // Communication result
     uint8_t dxl_error = 0;                          // Dynamixel error
-    uint16_t present_speed;
+    uint16_t present_speed = 0;
     dxl_comm_result = m_packetHandler->read2ByteTxRx(m_portHandler, id, PRESENT_SPEED, &present_speed, &dxl_error);
     if (dxl_comm_result != COMM_SUCCESS)
     {
