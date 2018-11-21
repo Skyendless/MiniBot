@@ -17,10 +17,9 @@
 #define PRESENT_SPEED       38
 #define MOVING              46
 
-DxlController::DxlController(const QString &deviceName, const QList<int> &ids, int baudRate, QObject *parent)
-    : QObject(parent), m_ids(ids), m_opened(false), m_baudRate(baudRate)
+DxlController::DxlController(QObject *parent)
+    : QObject(parent), m_opened(false)
 {
-    m_portHandler = dynamixel::PortHandler::getPortHandler(deviceName.toLatin1().data());
     m_packetHandler = dynamixel::PacketHandler::getPacketHandler(1.0);
     m_jointStateUpdateTimer = new QTimer(this);
     connect(m_jointStateUpdateTimer, &QTimer::timeout, this, &DxlController::onJointStateUpdateTimerTimeout);
@@ -28,12 +27,17 @@ DxlController::DxlController(const QString &deviceName, const QList<int> &ids, i
 
 DxlController::~DxlController()
 {
-    m_jointStateUpdateTimer->stop();
-    m_portHandler->closePort();
+    close();
 }
 
-void DxlController::open()
+void DxlController::open(const QString &deviceName, const QList<int> &ids, int baudRate)
 {
+    m_ids = ids;
+    m_baudRate = baudRate;
+    if (m_opened) {
+        m_portHandler->closePort();
+    }
+    m_portHandler = dynamixel::PortHandler::getPortHandler(deviceName.toLatin1().data());
 
     if (m_portHandler->openPort()) {
         qInfo() << "succeed to open port!";

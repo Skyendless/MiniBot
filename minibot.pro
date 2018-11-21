@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -56,7 +57,8 @@ SOURCES += \
     manipulator/settings.cpp \
     manipulator/utils.cpp \
     manipulator/kine.c \
-    manipulator/xmath.c
+    manipulator/xmath.c \
+    manipulator/consolewidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -91,7 +93,8 @@ HEADERS += \
     manipulator/posestate.h \
     manipulator/settings.h \
     manipulator/utils.h \
-    manipulator/xmath.h
+    manipulator/xmath.h \
+    manipulator/consolewidget.h
 
 FORMS += \
         mainwindow.ui \
@@ -107,6 +110,7 @@ FORMS += \
     biped.ui
 
 RESOURCES += \
-    pictures/res.qrc
+    pictures/res.qrc \
+    manipulator/manipulator.qrc
 
 DISTFILES +=

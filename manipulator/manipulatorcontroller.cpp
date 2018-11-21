@@ -9,11 +9,9 @@
 
 static float g_offsets[6] = { 2.618, 2.618, 2.618, 2.618, 2.618, 2.618 };
 
-ManipulatorController::ManipulatorController(const QString deviceName, const QList<int> ids, int baudRate, QObject *parent)
+ManipulatorController::ManipulatorController(QObject *parent)
     : QObject(parent), m_dt(80)
 {
-    Q_ASSERT(ids.length() == 6);
-
     m_currentJointState.jointAngles = {0, 0, 0, 0, 0, 0};
     m_currentJointState.jointSpeeds = {0, 0, 0, 0, 0, 0};
     float js[5] = {0, 0, 0, 0, 0};
@@ -30,7 +28,7 @@ ManipulatorController::ManipulatorController(const QString deviceName, const QLi
     m_lastJointState = m_currentJointState;
     m_lastPoseState = m_currentPoseState;
 
-    m_dxlController = new DxlController(deviceName, ids, baudRate);
+    m_dxlController = new DxlController;
     m_dxlController->moveToThread(&m_thread);
     connect(&m_thread, &QThread::finished, m_dxlController, &QObject::deleteLater);
     connect(this, &ManipulatorController::close, m_dxlController, &DxlController::close, Qt::QueuedConnection);
@@ -101,9 +99,10 @@ void ManipulatorController::setStepTime(double dt)
     m_dt = dt;
 }
 
-void ManipulatorController::enable()
+void ManipulatorController::enable(const QString deviceName, const QList<int> ids, int baudRate)
 {
-    emit open();
+    Q_ASSERT(ids.length() == 6);
+    emit open(deviceName, ids, baudRate);
 }
 
 void ManipulatorController::disable()

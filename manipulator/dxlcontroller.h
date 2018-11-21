@@ -13,14 +13,14 @@ class DxlController : public QObject
 {
     Q_OBJECT
 public:
-    explicit DxlController(const QString &deviceName, const QList<int> &ids, int baudRate = 1000000, QObject *parent = nullptr);
+    explicit DxlController(QObject *parent = nullptr);
     ~DxlController();
 
 signals:
     void jointStateUpdated(const JointState &state);
 
 public slots:
-    void open();
+    void open(const QString &deviceName, const QList<int> &ids, int baudRate = 1000000);
     void close();
     void setBaudRate(int baudRate);
     void jointActuate(const JointState &state);

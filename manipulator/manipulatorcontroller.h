@@ -12,12 +12,12 @@ class ManipulatorController : public QObject
 {
     Q_OBJECT
 public:
-    explicit ManipulatorController(const QString deviceName, const QList<int> ids, int baudRate = 1000000, QObject *parent = nullptr);
+    explicit ManipulatorController(QObject *parent = nullptr);
     ~ManipulatorController();
     void setStepTime(double dt);
 
 signals:
-    void open();
+    void open(const QString deviceName, const QList<int> ids, int baudRate = 1000000);
     void close();
     void setBaudRate(int baudRate);
     void jointActuate(const JointState &state);
@@ -28,7 +28,7 @@ signals:
 
 public slots:
     void onjointStateUpdated(const JointState &state);
-    void enable();
+    void enable(const QString deviceName, const QList<int> ids, int baudRate = 1000000);
     void disable();
 
     void movj(float j1, float j2, float j3, float j4, float j5, float tool=0, float rate=0.3);
