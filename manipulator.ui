@@ -889,6 +889,24 @@
           <item>
            <widget class="QPlainTextEdit" name="program_text_edit"/>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QPushButton" name="record_button">
+              <property name="text">
+               <string>Record</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="run_button">
+              <property name="text">
+               <string>Run</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
        </item>
@@ -1187,11 +1205,11 @@
  </resources>
  <connections/>
  <buttongroups>
+  <buttongroup name="cartesian_button_group"/>
   <buttongroup name="joints_button_group">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="cartesian_button_group"/>
  </buttongroups>
 </ui>

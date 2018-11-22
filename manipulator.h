@@ -30,6 +30,10 @@ private slots:
     void on_disconnect_button_clicked();
     void on_quit_button_clicked();
 
+    void on_record_button_clicked();
+
+    void on_run_button_clicked();
+
 private:
     Ui::manipulator *ui;
 

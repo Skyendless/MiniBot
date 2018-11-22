@@ -226,6 +226,10 @@ void manipulator::enableControls()
     for (QAbstractButton *button: ui->cartesian_button_group->buttons()) {
         button->setEnabled(true);
     }
+    ui->record_button->setEnabled(true);
+    ui->run_button->setEnabled(true);
+    ui->console_widget->setEnabled(true);
+    ui->program_text_edit->setEnabled(true);
     ui->connect_button->setEnabled(false);
     ui->disconnect_button->setEnabled(true);
 }
@@ -238,6 +242,10 @@ void manipulator::disableControls()
     for (QAbstractButton *button: ui->cartesian_button_group->buttons()) {
         button->setEnabled(false);
     }
+    ui->record_button->setEnabled(false);
+    ui->run_button->setEnabled(false);
+    ui->console_widget->setEnabled(false);
+    ui->program_text_edit->setEnabled(false);
     ui->connect_button->setEnabled(true);
     ui->disconnect_button->setEnabled(false);
 }
@@ -305,4 +313,33 @@ void manipulator::on_quit_button_clicked()
 {
     m_controller.disable();
     this->close();
+}
+
+void manipulator::on_record_button_clicked()
+{
+    QString cmd = QString("movj %1 %2 %3 %4 %5 %6\n").arg(m_commandJointState[0])
+            .arg(m_commandJointState[1]).arg(m_commandJointState[2]).arg(m_commandJointState[3])
+            .arg(m_commandJointState[4]).arg(m_commandJointState[5]);
+    ui->program_text_edit->moveCursor(QTextCursor::End);
+    ui->program_text_edit->insertPlainText(cmd);
+}
+
+void manipulator::on_run_button_clicked()
+{
+    for (QString cmd : ui->program_text_edit->toPlainText().split('\n')) {
+        QStringList argList = cmd.split(' ');
+        if (argList.length() >= 7 && argList[0] == "movj") {
+            double rate = 0.3;
+            if (argList.length() >= 8) {
+                rate = argList[7].toFloat();
+            }
+            m_controller.movj(argList[1].toFloat(),
+                              argList[2].toFloat(),
+                              argList[3].toFloat(),
+                              argList[4].toFloat(),
+                              argList[5].toFloat(),
+                              argList[6].toFloat(), rate);
+            QThread::msleep(50);
+        }
+    }
 }
