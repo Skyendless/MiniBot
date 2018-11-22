@@ -16,7 +16,11 @@ manipulator::manipulator(QWidget *parent) :
   disableControls();
 
   for (QSerialPortInfo info : QSerialPortInfo::availablePorts()) {
+#ifdef Q_OS_WIN
       ui->serial_port_combo_box->addItem(info.portName());
+#else
+      ui->serial_port_combo_box->addItem(info.systemLocation());
+#endif
   }
 
   connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onJointsButtonGroupClicked);
