@@ -58,7 +58,8 @@ SOURCES += \
     manipulator/utils.cpp \
     manipulator/kine.c \
     manipulator/xmath.c \
-    manipulator/consolewidget.cpp
+    manipulator/consolewidget.cpp \
+    inchworm/inchwormcontroller.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -94,7 +95,8 @@ HEADERS += \
     manipulator/settings.h \
     manipulator/utils.h \
     manipulator/xmath.h \
-    manipulator/consolewidget.h
+    manipulator/consolewidget.h \
+    inchworm/inchwormcontroller.h
 
 FORMS += \
         mainwindow.ui \

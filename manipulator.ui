@@ -905,6 +905,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="repeat_button">
+              <property name="text">
+               <string>Repeat</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>
@@ -1205,11 +1212,11 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="cartesian_button_group"/>
   <buttongroup name="joints_button_group">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
+  <buttongroup name="cartesian_button_group"/>
  </buttongroups>
 </ui>
