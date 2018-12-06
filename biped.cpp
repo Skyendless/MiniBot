@@ -25,7 +25,7 @@
 //各种时间定义
 #define TIME_MOVING_STANDING              1000//双足模式前进时,轮子的旋转时间
 #define LITTlE_DELAY                      100
-#define TRANSFORMING_DELAY                1200
+#define TRANSFORMING_DELAY                1000
 //通讯端朝上时,通信端接口大端在左下方时为标准方向
 #define LEFT_WHEEL                        0
 #define LEFT_MID                          1
@@ -34,10 +34,10 @@
 #define RIGHT_MID                         4
 #define RIGHT_WHEEL                       5
 
-#define SPEED_LEG_WHEEL                   500//双足模式前进时,轮子的旋转时间
+#define SPEED_LEG_WHEEL                   500//双足模式时的轮子速度
 #define SPEED_LEG_JOINT                   500//双足模式的关节速度
 #define SPEED_JOINT_TRANSFORMING          80//轮足转换的关节速度
-#define SPEED_WHEEL_TRANSFORMING          500//轮足转换的轮子速度
+#define SPEED_WHEEL_TRANSFORMING          150//轮足转换的轮子速度
 #define SPEED_WHEELING_MODE_DEFAULT       500//轮式模式下的默认速度
 
 #define ANGLE_MID_INIT                    150
@@ -126,12 +126,17 @@ void biped::on_button_transform_clicked()
     msecSleep(TRANSFORMING_DELAY);
     //P5
     mydev.setServoAngle(LEFT_MID, 70);
+    mydev.setServoAngle(RIGHT_MID, 125);//补救
     msecSleep(TRANSFORMING_DELAY);
-    //P6
-    mydev.setServoAngle(RIGHT_MID, 120);
-    msecSleep(TRANSFORMING_DELAY);
+//    //P6
+//    mydev.setServoAngle(RIGHT_MID, 120);//幅度太大
+//    msecSleep(TRANSFORMING_DELAY);
     //P7
-    mydev.setServoAngle(LEFT_TOP, 170);
+    mydev.setServoAngle(LEFT_TOP, 200);//这里扑街
+    msecSleep(TRANSFORMING_DELAY);
+    mydev.setServoAngle(RIGHT_MID, 115);//补救
+    msecSleep(TRANSFORMING_DELAY);
+    mydev.setServoAngle(LEFT_TOP, 170);//这里扑街
     msecSleep(TRANSFORMING_DELAY);
     //P8
     mydev.setServoAngle(RIGHT_TOP, 170);
@@ -147,22 +152,18 @@ void biped::on_button_transform_clicked()
     //P11
     mydev.setServoAngle(LEFT_MID, 150);
     mydev.setServoAngle(RIGHT_MID, 150);
-    //msecSleep(TRANSFORMING_DELAY);
     mydev.setServoAngle(LEFT_MID, 170);
     mydev.setServoAngle(RIGHT_MID, 130);
-    msecSleep(2*TRANSFORMING_DELAY);
+    msecSleep(2.5*TRANSFORMING_DELAY);
     //P12
     mydev.setServoSpeed(LEFT_WHEEL,0 + ANTI_CLOCKWISE_WHEEL);//左侧舵机逆时针
     mydev.setServoSpeed(RIGHT_WHEEL,0 + CLOCKWISE_WHEELMODE);//右侧舵机顺时针
     //P13
+    mydev.setServoAngle(LEFT_TOP, 240);
+    mydev.setServoAngle(RIGHT_TOP, 60);
     mydev.setServoAngle(LEFT_MID, 60);
     mydev.setServoAngle(RIGHT_MID, 240);
     msecSleep(TRANSFORMING_DELAY);
-    //P14
-    mydev.setServoAngle(LEFT_TOP, 240);
-    mydev.setServoAngle(RIGHT_TOP, 60);
-    msecSleep(TRANSFORMING_DELAY);
-
     //禁能和使能相关按扭
     ui->button_WheelMode_GoBackward->setEnabled(true);
     ui->button_WheelMode_GoStraight->setEnabled(true);
