@@ -168,7 +168,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Decrese &quot;B&quot;</string>
+    <string>Decrease &quot;B&quot;</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
@@ -355,7 +355,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Decrease &quot;B&quot;</string>
+    <string>Decrease &quot;A&quot;</string>
    </property>
    <property name="icon">
     <iconset resource="pictures/res.qrc">
