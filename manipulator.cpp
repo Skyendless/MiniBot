@@ -4,13 +4,14 @@
 #include "manipulator/kine.h"
 
 #include <QSerialPortInfo>
+#include <QTimer>
 #include <QDebug>
 
 #define PI 3.14159265
 
 manipulator::manipulator(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::manipulator)
+  ui(new Ui::manipulator), m_pressedButton(nullptr)
 {
   ui->setupUi(this);
   disableControls();
@@ -23,8 +24,27 @@ manipulator::manipulator(QWidget *parent) :
 #endif
   }
 
-  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onJointsButtonGroupClicked);
-  connect(ui->cartesian_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onCartesianButtonGroupClicked);
+  m_jointsButtonGroupHoldTimer = new QTimer;
+  m_cartesianButtonGroupTimer = new QTimer;
+
+//  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onJointsButtonGroupClicked);
+  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonPressed), this, &manipulator::onJointsButtonGroupPressed);
+  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonReleased), this, &manipulator::onJointsButtonGroupReleased);
+  connect(m_jointsButtonGroupHoldTimer, &QTimer::timeout, [=]() {
+      if (m_pressedButton) {
+          onJointsButtonGroupClicked(m_pressedButton);
+      }
+  });
+
+//  connect(ui->cartesian_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onCartesianButtonGroupClicked);
+  connect(ui->cartesian_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonPressed), this, &manipulator::onCartesianButtonGroupPressed);
+  connect(ui->cartesian_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonReleased), this, &manipulator::onCartesianButtonGroupReleased);
+  connect(m_cartesianButtonGroupTimer, &QTimer::timeout, [=]() {
+      if (m_pressedButton) {
+          onCartesianButtonGroupClicked(m_pressedButton);
+      }
+  });
+
   connect(ui->console_widget, &ConsoleWidget::getNewCommand, this, &manipulator::hanleNewCommand);
   connect(&m_controller, &ManipulatorController::jointStateUpdated, this, &manipulator::onJointStateUpated);
   connect(&m_controller, &ManipulatorController::poseStateUpdated, this, &manipulator::onPoseStateUpdated);
@@ -84,6 +104,20 @@ void manipulator::onJointsButtonGroupClicked(QAbstractButton *button)
     updateCommandStateLabel();
 }
 
+void manipulator::onJointsButtonGroupPressed(QAbstractButton *button)
+{
+    qDebug() << "joint press";
+    m_pressedButton = button;
+    m_jointsButtonGroupHoldTimer->start(100);
+}
+
+void manipulator::onJointsButtonGroupReleased(QAbstractButton *button)
+{
+    qDebug() << "joint release";
+    m_jointsButtonGroupHoldTimer->stop();
+    m_pressedButton = nullptr;
+}
+
 void manipulator::onCartesianButtonGroupClicked(QAbstractButton *button)
 {
     qDebug() << button->objectName() << "clicked!";
@@ -132,6 +166,20 @@ void manipulator::onCartesianButtonGroupClicked(QAbstractButton *button)
                       m_commandPoseState[3], m_commandPoseState[4], m_commandPoseState[5], m_commandJointState[5], 0.1);
 
     updateCommandStateLabel();
+}
+
+void manipulator::onCartesianButtonGroupPressed(QAbstractButton *button)
+{
+    qDebug() << "cart press";
+    m_pressedButton = button;
+    m_cartesianButtonGroupTimer->start(100);
+}
+
+void manipulator::onCartesianButtonGroupReleased(QAbstractButton *button)
+{
+    qDebug() << "cart release";
+    m_cartesianButtonGroupTimer->stop();
+    m_pressedButton = nullptr;
 }
 
 void manipulator::onJointStateUpated(const JointState &state)

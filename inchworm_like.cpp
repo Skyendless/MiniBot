@@ -1,6 +1,7 @@
 #include "inchworm_like.h"
 #include "ui_inchworm_like.h"
 
+#include <QTimer>
 #include <QDebug>
 #include <QSerialPortInfo>
 
@@ -8,7 +9,7 @@
 
 inchworm_like::inchworm_like(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::inchworm_like)
+  ui(new Ui::inchworm_like), m_pressedButton(nullptr)
 {
   ui->setupUi(this);
   disableControls();
@@ -21,7 +22,17 @@ inchworm_like::inchworm_like(QWidget *parent) :
 #endif
   }
 
-  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &inchworm_like::onJointsButtonGroupClicked);
+  m_jointsButtonGroupHoldTimer = new QTimer;
+
+//  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &inchworm_like::onJointsButtonGroupClicked);
+  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonPressed), this, &inchworm_like::onJointsButtonGroupPressed);
+  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonReleased), this, &inchworm_like::onJointsButtonGroupReleased);
+  connect(m_jointsButtonGroupHoldTimer, &QTimer::timeout, [=]() {
+      if (m_pressedButton) {
+          onJointsButtonGroupClicked(m_pressedButton);
+      }
+  });
+
   connect(&m_controller, &InchwormController::jointStateUpdated, this, &inchworm_like::onJointStateUpated);
 }
 
@@ -72,6 +83,20 @@ void inchworm_like::onJointsButtonGroupClicked(QAbstractButton *button)
                       m_commandJointState[3], m_commandJointState[4], 0.1);
 
     updateCommandStateLabel();
+}
+
+void inchworm_like::onJointsButtonGroupPressed(QAbstractButton *button)
+{
+    qDebug() << "joint press";
+    m_pressedButton = button;
+    m_jointsButtonGroupHoldTimer->start(100);
+}
+
+void inchworm_like::onJointsButtonGroupReleased(QAbstractButton *button)
+{
+    qDebug() << "joint release";
+    m_jointsButtonGroupHoldTimer->stop();
+    m_pressedButton = nullptr;
 }
 
 void inchworm_like::onJointStateUpated(const JointState &state)

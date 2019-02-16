@@ -16,11 +16,13 @@ class inchworm_like : public QDialog
     Q_OBJECT
 
 public:
-    explicit inchworm_like(QWidget *parent = 0);
+    explicit inchworm_like(QWidget *parent = nullptr);
     ~inchworm_like();
 
 private slots:
     void onJointsButtonGroupClicked(QAbstractButton *button);
+    void onJointsButtonGroupPressed(QAbstractButton *button);
+    void onJointsButtonGroupReleased(QAbstractButton *button);
     void onJointStateUpated(const JointState &state);
 
     void on_quit_button_clicked();
@@ -35,7 +37,10 @@ private:
     InchwormController m_controller;
 
     double m_commandJointState[6] = {0, };
-    double m_angleStep = 0.1;
+    double m_angleStep = 0.05;
+
+    QAbstractButton *m_pressedButton;
+    QTimer *m_jointsButtonGroupHoldTimer;
 
     void updateCommandStateLabel();
     void disableControls();

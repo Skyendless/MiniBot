@@ -16,12 +16,18 @@ class manipulator : public QDialog
     Q_OBJECT
 
 public:
-    explicit manipulator(QWidget *parent = 0);
+    explicit manipulator(QWidget *parent = nullptr);
     ~manipulator();
 
 private slots:
     void onJointsButtonGroupClicked(QAbstractButton *button);
+    void onJointsButtonGroupPressed(QAbstractButton *button);
+    void onJointsButtonGroupReleased(QAbstractButton *button);
+
     void onCartesianButtonGroupClicked(QAbstractButton *button);
+    void onCartesianButtonGroupPressed(QAbstractButton *button);
+    void onCartesianButtonGroupReleased(QAbstractButton *button);
+
     void onJointStateUpated(const JointState &state);
     void onPoseStateUpdated(const PoseState &state);
     void hanleNewCommand(const QString &cmd);
@@ -37,8 +43,12 @@ private:
 
     double m_commandPoseState[6] = {0, };
     double m_commandJointState[6] = {0, };
-    double m_positionStep = 5;
-    double m_angleStep = 0.1;
+    double m_positionStep = 1;
+    double m_angleStep = 0.05;
+
+    QAbstractButton *m_pressedButton;
+    QTimer *m_jointsButtonGroupHoldTimer;
+    QTimer *m_cartesianButtonGroupTimer;
 
     ManipulatorController m_controller;
 
