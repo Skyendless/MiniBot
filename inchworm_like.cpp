@@ -152,15 +152,19 @@ void inchworm_like::on_run_button_clicked()
     for (QString cmd : ui->program_text_edit->toPlainText().split('\n')) {
         QStringList argList = cmd.split(' ');
         if (argList.length() >= 6 && argList[0] == "movj") {
-            double rate = 0.3;
+            double rate = 0.1;
             if (argList.length() >= 7) {
                 rate = argList[6].toFloat();
             }
-            m_controller.movj(argList[1].toFloat(),
-                              argList[2].toFloat(),
-                              argList[3].toFloat(),
-                              argList[4].toFloat(),
-                              argList[5].toFloat(), rate);
+            m_commandJointState[0] = argList[1].toFloat();
+            m_commandJointState[1] = argList[2].toFloat();
+            m_commandJointState[2] = argList[3].toFloat();
+            m_commandJointState[3] = argList[4].toFloat();
+            m_commandJointState[4] = argList[5].toFloat();
+            m_controller.movj(m_commandJointState[0], m_commandJointState[1], m_commandJointState[2],
+                              m_commandJointState[3], m_commandJointState[4], rate);
+
+            updateCommandStateLabel();
             QThread::msleep(50);
         }
     }
@@ -168,7 +172,7 @@ void inchworm_like::on_run_button_clicked()
 
 void inchworm_like::on_repeat_button_clicked()
 {
-
+    on_run_button_clicked();
 }
 
 bool inchworm_like::exceedRange(double joints[])
