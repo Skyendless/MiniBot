@@ -24,6 +24,7 @@ void MainWindow::on_pushButton_quit_clicked()
     this->close();
 }
 
+int bot_selet = 0;
 
 void MainWindow::on_pushButton_confirm_clicked()
 {
@@ -33,14 +34,16 @@ void MainWindow::on_pushButton_confirm_clicked()
             manipulatorbot.exec();
             this->show();
       break;
-    case 2: this->close();
-            two_wheelbot.show();
-            two_wheelbot.exec();
+    case 2: bot_selet = 2;
+            this->close();
+            four_wheelbot.show();
+            four_wheelbot.exec();
             this->show();
       break;
-    case 3: this->close();
-            three_wheelbot.show();
-            three_wheelbot.exec();
+    case 3: bot_selet = 3;
+            this->close();
+            four_wheelbot.show();
+            four_wheelbot.exec();
             this->show();
       break;
     case 4: this->close();
@@ -63,7 +66,8 @@ void MainWindow::on_pushButton_confirm_clicked()
             bipedbot.exec();
             this->show();
       break;
-    case 8: this->close();
+    case 8: bot_selet = 4;
+            this->close();
             four_wheelbot.show();
             four_wheelbot.exec();
             this->show();

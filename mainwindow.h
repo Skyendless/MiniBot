@@ -25,6 +25,9 @@ class MainWindow : public QMainWindow
 
 public:
   explicit MainWindow(QWidget *parent = 0);
+
+ // int bot_selet;
+
   ~MainWindow();
 
 private slots:
