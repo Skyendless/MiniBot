@@ -2,6 +2,7 @@
 #include "ui_inchworm_like.h"
 
 #include <QTimer>
+#include <QMessageBox>
 #include <QDebug>
 #include <QSerialPortInfo>
 
@@ -23,6 +24,11 @@ inchworm_like::inchworm_like(QWidget *parent) :
   }
 
   m_jointsButtonGroupHoldTimer = new QTimer;
+
+  m_exceedRangeMessageBox = new QMessageBox;
+  m_exceedRangeMessageBox->setText(tr("Exceed range!"));
+  m_exceedRangeMessageBox->setStandardButtons(QMessageBox::Ok);
+  m_exceedRangeMessageBox->setDefaultButton(QMessageBox::Ok);
 
 //  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &inchworm_like::onJointsButtonGroupClicked);
   connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonPressed), this, &inchworm_like::onJointsButtonGroupPressed);
@@ -76,6 +82,7 @@ void inchworm_like::onJointsButtonGroupClicked(QAbstractButton *button)
         for (int i=0; i<5; i++) {
             m_commandJointState[i] = originalJoints[i];
         }
+        m_exceedRangeMessageBox->exec();
         return;
     }
 

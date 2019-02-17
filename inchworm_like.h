@@ -6,6 +6,7 @@
 #include "inchworm/inchwormcontroller.h"
 
 class QAbstractButton;
+class QMessageBox;
 
 namespace Ui {
     class inchworm_like;
@@ -41,6 +42,8 @@ private:
 
     QAbstractButton *m_pressedButton;
     QTimer *m_jointsButtonGroupHoldTimer;
+
+    QMessageBox * m_exceedRangeMessageBox;
 
     void updateCommandStateLabel();
     void disableControls();

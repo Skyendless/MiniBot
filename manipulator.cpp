@@ -5,6 +5,7 @@
 
 #include <QSerialPortInfo>
 #include <QTimer>
+#include <QMessageBox>
 #include <QDebug>
 
 #define PI 3.14159265
@@ -26,6 +27,16 @@ manipulator::manipulator(QWidget *parent) :
 
   m_jointsButtonGroupHoldTimer = new QTimer;
   m_cartesianButtonGroupTimer = new QTimer;
+
+  m_noIkineMessageBox = new QMessageBox;
+  m_noIkineMessageBox->setText(tr("The pose has no inverse kinematics solution!"));
+  m_noIkineMessageBox->setStandardButtons(QMessageBox::Ok);
+  m_noIkineMessageBox->setDefaultButton(QMessageBox::Ok);
+
+  m_exceedRangeMessageBox = new QMessageBox;
+  m_exceedRangeMessageBox->setText(tr("Exceed range!"));
+  m_exceedRangeMessageBox->setStandardButtons(QMessageBox::Ok);
+  m_exceedRangeMessageBox->setDefaultButton(QMessageBox::Ok);
 
 //  connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this, &manipulator::onJointsButtonGroupClicked);
   connect(ui->joints_button_group, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonPressed), this, &manipulator::onJointsButtonGroupPressed);
@@ -94,6 +105,7 @@ void manipulator::onJointsButtonGroupClicked(QAbstractButton *button)
         for (int i=0; i<6; i++) {
             m_commandJointState[i] = originalJoints[i];
         }
+        m_exceedRangeMessageBox->exec();
         return;
     }
 
@@ -157,6 +169,7 @@ void manipulator::onCartesianButtonGroupClicked(QAbstractButton *button)
         for (int i=0; i<6; i++) {
             m_commandPoseState[i] = originalPose[i];
         }
+        m_noIkineMessageBox->exec();
         return;
     }
 

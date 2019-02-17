@@ -6,6 +6,7 @@
 #include "manipulator/manipulatorcontroller.h"
 
 class QAbstractButton;
+class QMessageBox;
 
 namespace Ui {
     class manipulator;
@@ -49,6 +50,9 @@ private:
     QAbstractButton *m_pressedButton;
     QTimer *m_jointsButtonGroupHoldTimer;
     QTimer *m_cartesianButtonGroupTimer;
+
+    QMessageBox * m_noIkineMessageBox;
+    QMessageBox * m_exceedRangeMessageBox;
 
     ManipulatorController m_controller;
 
