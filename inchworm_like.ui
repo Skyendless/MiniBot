@@ -563,6 +563,13 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="help_button">
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="quit_button">
        <property name="text">
         <string>quit</string>

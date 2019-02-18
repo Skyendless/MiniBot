@@ -1,5 +1,6 @@
 #include "inchworm_like.h"
 #include "ui_inchworm_like.h"
+#include "ui_inchworm_like_help_dialog.h"
 
 #include <QTimer>
 #include <QMessageBox>
@@ -10,9 +11,13 @@
 
 inchworm_like::inchworm_like(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::inchworm_like), m_pressedButton(nullptr)
+  ui(new Ui::inchworm_like),
+  help_dialog_ui(new Ui::inchworm_like_help_dialog),
+  m_helpDialog(new QDialog(this)),
+  m_pressedButton(nullptr)
 {
   ui->setupUi(this);
+  help_dialog_ui->setupUi(m_helpDialog);
   disableControls();
 
   for (QSerialPortInfo info : QSerialPortInfo::availablePorts()) {
@@ -215,4 +220,9 @@ bool inchworm_like::exceedRange(double joints[])
         }
     }
     return false;
+}
+
+void inchworm_like::on_help_button_clicked()
+{
+    m_helpDialog->exec();
 }

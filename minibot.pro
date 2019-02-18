@@ -109,7 +109,8 @@ FORMS += \
     four_wheel_bot.ui \
     mobile_manipulator.ui \
     uisnakemove.ui \
-    biped.ui
+    biped.ui \
+    inchworm_like_help_dialog.ui
 
 RESOURCES += \
     pictures/res.qrc \

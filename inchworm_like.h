@@ -10,6 +10,7 @@ class QMessageBox;
 
 namespace Ui {
     class inchworm_like;
+    class inchworm_like_help_dialog;
 }
 
 class inchworm_like : public QDialog
@@ -33,8 +34,14 @@ private slots:
     void on_run_button_clicked();
     void on_repeat_button_clicked();
 
+    void on_help_button_clicked();
+
 private:
     Ui::inchworm_like *ui;
+    Ui::inchworm_like_help_dialog *help_dialog_ui;
+
+    QDialog *m_helpDialog;
+
     InchwormController m_controller;
 
     double m_commandJointState[6] = {0, };
