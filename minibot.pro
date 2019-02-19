@@ -110,7 +110,8 @@ FORMS += \
     mobile_manipulator.ui \
     uisnakemove.ui \
     biped.ui \
-    inchworm_like_help_dialog.ui
+    inchworm_like_help_dialog.ui \
+    manipulator_help_dialog.ui
 
 RESOURCES += \
     pictures/res.qrc \

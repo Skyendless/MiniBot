@@ -10,6 +10,7 @@ class QMessageBox;
 
 namespace Ui {
     class manipulator;
+    class manipulator_help_dialog;
 }
 
 class manipulator : public QDialog
@@ -39,8 +40,13 @@ private slots:
     void on_record_button_clicked();
     void on_run_button_clicked();
 
+    void on_help_button_clicked();
+
 private:
     Ui::manipulator *ui;
+    Ui::manipulator_help_dialog *help_dialog_ui;
+
+    QDialog *m_helpDialog;
 
     double m_commandPoseState[6] = {0, };
     double m_commandJointState[6] = {0, };

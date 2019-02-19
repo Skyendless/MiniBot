@@ -1,5 +1,6 @@
 #include "manipulator.h"
 #include "ui_manipulator.h"
+#include "ui_manipulator_help_dialog.h"
 
 #include "manipulator/kine.h"
 
@@ -12,9 +13,13 @@
 
 manipulator::manipulator(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::manipulator), m_pressedButton(nullptr)
+  ui(new Ui::manipulator),
+  help_dialog_ui(new Ui::manipulator_help_dialog),
+  m_helpDialog(new QDialog(this)),
+  m_pressedButton(nullptr)
 {
   ui->setupUi(this);
+  help_dialog_ui->setupUi(m_helpDialog);
   disableControls();
 
   for (QSerialPortInfo info : QSerialPortInfo::availablePorts()) {
@@ -407,4 +412,9 @@ void manipulator::on_run_button_clicked()
             QThread::msleep(50);
         }
     }
+}
+
+void manipulator::on_help_button_clicked()
+{
+    m_helpDialog->exec();
 }
