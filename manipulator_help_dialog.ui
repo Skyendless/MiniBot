@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,10 +23,20 @@
 2. 关节控制
    点击+/-号按钮可控制各关节的角度，单位为弧度，长按可连续移动；
 
-3. 编程
+3. 控制台
+   在控制台中，可以输入如下指令控制机器人：
+   movj &lt;j1&gt; &lt;j2&gt; &lt;j3&gt; &lt;j4&gt; &lt;j5&gt; &lt;j6&gt; &lt;rate&gt;
+   movp &lt;x&gt; &lt;y&gt; &lt;z&gt; &lt;roll&gt; &lt;pitch&gt; &lt;yaw&gt; &lt;rate&gt;
+   其中，
+   j1~j6分别是操作臂各关节（包括末端夹持器）的角度，单位是弧度；
+   x，y，z是笛卡尔空间下操作臂末端的坐标，单位是毫米；
+   roll，pitch，yaw是表示操作臂末端姿态的RPY角，单位是弧度；
+   rate是表示以最快速度的多少倍运行，取值范围为0~1；
+
+4. 编程
    使用编程框可以对操作臂进行示教编程，使用关节控制将机器人移动到所需位置后，可以点击记录按钮来记录当前位置，重复多次直至完成编程。然后可以使用运行按钮来重复运行程序；
    
-4. 状态
+5. 状态
    状态框中会实时显示当前机器人各关节的位置；
 </string>
      </property>
