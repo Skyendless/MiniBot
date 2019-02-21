@@ -21,7 +21,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Joints</string>
+          <string>关节控制</string>
          </property>
          <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,1,0">
           <item row="0" column="0">
@@ -444,7 +444,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Cartesian</string>
+          <string>笛卡尔空间控制</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,1,0">
           <item row="3" column="1">
@@ -871,7 +871,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>Console</string>
+          <string>控制台</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
@@ -883,7 +883,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
-          <string>Program</string>
+          <string>编程</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
@@ -894,21 +894,21 @@
             <item>
              <widget class="QPushButton" name="record_button">
               <property name="text">
-               <string>Record</string>
+               <string>记录</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="run_button">
               <property name="text">
-               <string>Run</string>
+               <string>运行</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="repeat_button">
               <property name="text">
-               <string>Repeat</string>
+               <string>重复运行</string>
               </property>
              </widget>
             </item>
@@ -926,7 +926,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox_5">
        <property name="title">
-        <string>Settings</string>
+        <string>设置</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -966,14 +966,14 @@
           <item>
            <widget class="QPushButton" name="connect_button">
             <property name="text">
-             <string>Connect</string>
+             <string>连接</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="disconnect_button">
             <property name="text">
-             <string>Disconnect</string>
+             <string>断开</string>
             </property>
            </widget>
           </item>
@@ -985,7 +985,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox_6">
        <property name="title">
-        <string>Status</string>
+        <string>状态</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,1,0,1">
         <item row="0" column="0">
@@ -1169,7 +1169,7 @@
      <item>
       <widget class="QPushButton" name="quit_button">
        <property name="text">
-        <string>quit</string>
+        <string>退出</string>
        </property>
       </widget>
      </item>
