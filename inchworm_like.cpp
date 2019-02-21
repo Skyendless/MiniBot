@@ -226,3 +226,55 @@ void inchworm_like::on_help_button_clicked()
 {
     m_helpDialog->exec();
 }
+
+void inchworm_like::on_init_button_clicked()
+{
+    // 弯曲成尺蠖型，两端夹持器（第1，5关节）松开
+    m_controller.movj(0.5f, -0.6f, -1.5f, -1.1f, 0.5f, 0.1f);
+}
+
+void inchworm_like::on_start_button_clicked()
+{
+    // 夹紧角度，这里需要注意一下，G模块在之前的测试中，不同模块之间的转动方向可能是相反的
+    // 这里均按0弧度时是完全夹紧的状态，往+方向增大，加持器夹角也增大
+    // 如果出现相反的情况，考虑调整G模块，或者将下方的加持器（1，5关节）关节角度取反
+    float gripperAngle = ui->gripper_angle_line_edit->text().toFloat();
+    // 两端夹紧
+    m_controller.movj(gripperAngle, -0.6f, -1.5f, -1.1f, gripperAngle, 0.1f);
+}
+
+void inchworm_like::on_forward_button_clicked()
+{
+    // 夹紧角度
+    float gripperAngle = ui->gripper_angle_line_edit->text().toFloat();
+    // 前端稍微松开，后端保持夹紧
+    m_controller.movj(gripperAngle + 0.1f, -0.6f, -1.5f, -1.1f, gripperAngle, 0.1f);
+    // 然后向前伸展
+    m_controller.movj(gripperAngle + 0.1f, -1.2f, -0.5f, -1.5f, gripperAngle, 0.1f);
+    // 两端夹紧
+    m_controller.movj(gripperAngle, -1.2f, -0.5f, -1.5f, gripperAngle, 0.1f);
+    // 前端保持夹紧，后端稍微松开
+    m_controller.movj(gripperAngle, -1.2f, -0.5f, -1.5f, gripperAngle + 0.1f, 0.1f);
+    // 然后向前收缩
+    m_controller.movj(gripperAngle, -0.6f, -1.5f, -1.1f, gripperAngle + 0.1f, 0.1f);
+    // 两端夹紧，完成一个前进步态
+    m_controller.movj(gripperAngle, -0.6f, -1.5f, -1.1f, gripperAngle, 0.1f);
+}
+
+void inchworm_like::on_back_button_clicked()
+{
+    // 夹紧角度
+    float gripperAngle = ui->gripper_angle_line_edit->text().toFloat();
+    // 前端保持夹紧，后端稍微松开
+    m_controller.movj(gripperAngle, -0.6f, -1.5f, -1.1f, gripperAngle + 0.1f, 0.1f);
+    // 然后向后伸展
+    m_controller.movj(gripperAngle, -1.2f, -0.5f, -1.5f, gripperAngle + 0.1f, 0.1f);
+    // 两端夹紧
+    m_controller.movj(gripperAngle, -1.2f, -0.5f, -1.5f, gripperAngle, 0.1f);
+    // 前端稍微松开，后端保持夹紧
+    m_controller.movj(gripperAngle + 0.1f, -1.2f, -0.5f, -1.5f, gripperAngle, 0.1f);
+    // 然后向后收缩
+    m_controller.movj(gripperAngle + 0.1f, -0.6f, -1.5f, -1.1f, gripperAngle, 0.1f);
+    // 两端夹紧，完成一个后退步态
+    m_controller.movj(gripperAngle, -0.6f, -1.5f, -1.1f, gripperAngle, 0.1f);
+}

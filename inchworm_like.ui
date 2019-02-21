@@ -560,12 +560,16 @@
           <item>
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>末端夹持角度（弧度）：</string>
+             <string>末端夹紧角度（弧度）：</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="gripper_angle_line_edit"/>
+           <widget class="QLineEdit" name="gripper_angle_line_edit">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>

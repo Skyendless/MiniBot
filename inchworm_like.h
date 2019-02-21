@@ -36,6 +36,14 @@ private slots:
 
     void on_help_button_clicked();
 
+    void on_init_button_clicked();
+
+    void on_start_button_clicked();
+
+    void on_forward_button_clicked();
+
+    void on_back_button_clicked();
+
 private:
     Ui::inchworm_like *ui;
     Ui::inchworm_like_help_dialog *help_dialog_ui;
